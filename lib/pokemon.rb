@@ -33,6 +33,6 @@ def self.find(id, db)
     SQL
     
     pokemon = db.execute(sql, [id])
-    Pokemon.new(pokemon[1], pokemon[2], db, id )
+    Pokemon.new(pokemon[0][1], pokemon[0][2], db, id )
   end
 end
