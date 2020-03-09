@@ -24,15 +24,17 @@ class Pokemon
     new_pokemon.id = pokemon[0][0]
     new_pokemon.name = pokemon[0][1]
     new_pokemon.type = pokemon[0][2]
-  
-  
-  
- def self.find(id, db)
-    sql = <<-SQL
-      SELECT * FROM pokemon WHERE id = (?);
-    SQL
-    
-    pokemon = db.execute(sql, [id]).flatten
-    Pokemon.new(id, pokemon[1], pokemon[2], db )
+    return new_pokemon
   end
+  
+  
+  
+# def self.find(id, db)
+#     sql = <<-SQL
+#       SELECT * FROM pokemon WHERE id = (?);
+#     SQL
+    
+#     pokemon = db.execute(sql, [id]).flatten
+#     Pokemon.new(id, pokemon[1], pokemon[2], db )
+#   end
 end
